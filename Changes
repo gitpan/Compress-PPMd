@@ -1,5 +1,8 @@
 Revision history for Perl extension Compress::PPMd.
 
+0.04  28 Mar 2003
+	- license statement in README corrected
+
 0.03  27 Mar 2003
 	- require recent MakeMaker to use C++ compiler.
 
