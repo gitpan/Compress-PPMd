@@ -1,5 +1,8 @@
 Revision history for Perl extension Compress::PPMd.
 
+0.05  28 Mar 2003
+	- examples in synopsis corrected
+
 0.04  28 Mar 2003
 	- license statement in README corrected
 

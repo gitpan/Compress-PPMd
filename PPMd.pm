@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 require Exporter;
 
@@ -54,11 +54,11 @@ Compress::PPMd - PPMd compression
 
   use Compress::PPMd;
 
-  my $encoder=Compress::PPMd::Encoder();
+  my $encoder=Compress::PPMd::Encoder->new();
   my $encoded=$encoder->encode($text);
   my $encoded2=$encoder->encode($text2);
 
-  my $decoder=Compress::PPMd::Decoder();
+  my $decoder=Compress::PPMd::Decoder->new();
   my $decoded=$encoder->decode($encoded);
   my $decoded2=$encoder->decode($encoded2);
 
