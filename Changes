@@ -1,6 +1,9 @@
 Revision history for Perl extension Compress::PPMd.
 
-0.09  13 Feb 2003
+0.10  28 Feb 2004
+	- corrected bug in test 3_rubbish.t
+
+0.09  13 Feb 2004
 	- set linker to g++
 
 0.08  15 May 2003

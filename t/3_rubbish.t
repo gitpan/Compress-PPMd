@@ -19,7 +19,7 @@ BEGIN { use_ok('Compress::PPMd') };
 
 for (1..25) {	
     my $decoder=eval Compress::PPMd::Decoder->new();
-    my $rubbish=pack("C*", map { rand $_ } (1..100000));
+    my $rubbish=pack("C*", map { int(rand 256) } (1..100000));
     my $decoded=eval {$decoder->decode($rubbish) };
     ok(1, "do not crash by bad encoded data");
 }
