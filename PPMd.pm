@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 require Exporter;
 
@@ -24,6 +24,24 @@ use constant MRM_FREEZE => 3;
 
 require XSLoader;
 XSLoader::load('Compress::PPMd', $VERSION);
+
+sub Compress::PPMd::Encoder::deflate {
+    if (wantarray) {
+	return ($_[0]->encode($_[1]), 0)
+    }
+    $_[0]->encode($_[1])
+}
+
+sub Compress::PPMd::Decoder::inflate {
+    if (wantarray) {
+	return ($_[0]->decode($_[1]), 0)
+    }
+    $_[0]->decode($_[1])
+}
+
+sub Compress::PPMd::Encoder::flush {
+    wantarray ? ("", 0) : ""
+}
 
 1;
 __END__
@@ -55,7 +73,7 @@ library.
 L<Compress::PPMd> is compossed of two classes to compress and
 decompress data respectively:
 
-=head2 L<Compress::PPMd::Encoder>
+=head2 Compress::PPMd::Encoder
 
 =over 4
 
@@ -118,9 +136,18 @@ compresses a chunk of data.
 
 in C<solid> mode C<reset> causes the encoder to clean its memory.
 
+=item C<$encoder-E<gt>deflate($data)>
+
+wrapper around C<encode> method for L<Compress::Zlib> interface
+compatibility.
+
+=item C<$encoder-E<gt>flush($mode)>
+
+do nothing method for L<Compress::Zlib> interface compatibility.
+
 =back
 
-=head2 C<Compress::PPMd::Decoder>
+=head2 Compress::PPMd::Decoder
 
 =over 4
 
@@ -141,6 +168,11 @@ has the same function that the equivalent encoder method and has to be
 used symmetrically, that is, for every time C<$encoder-E<gt>reset> is called
 C<$decoder-E<gt>reset> also has to be called.
 
+=item C<$encoder-E<gt>inflate($data)>
+
+wrapper around C<decode> method for L<Compress::Zlib> interface
+compatibility.
+
 =back
 
 =head2 EXPORT
@@ -160,6 +192,10 @@ MRMethod constants when used with C<:mrm>:
 =head1 BUGS
 
 This is a very early release, expect bugs.
+
+Only tested on Linux, support for Win32 planned.
+
+PPMd library doesn't work on 64bits architectures.
 
 I will probably change the interface later.
 
