@@ -1,5 +1,8 @@
 Revision history for Perl extension Compress::PPMd.
 
+0.09  13 Feb 2003
+	- set linker to g++
+
 0.08  15 May 2003
 	- now compiles on Windows with MSVC
 

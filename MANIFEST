@@ -22,3 +22,4 @@ t/3_rubbish.t
 typemap
 Types.hpp
 Wrapper.hpp
+META.yml                                 Module meta-data (added by MakeMaker)
