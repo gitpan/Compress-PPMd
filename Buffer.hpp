@@ -11,7 +11,7 @@ public:
     PPMD_In(SV *sv, int d=0) :
 	die(d)
     {
-	unsigned int len;
+	STRLEN len;
 	str=(BYTE *)SvPV(sv, len);
 	limit=str+len;
 	// fprintf(stderr, "PPMD_In->new(%p, %p) [len=%d]\n", str, limit, len);

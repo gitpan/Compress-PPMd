@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.05';
+our $VERSION = '0.07';
 
 require Exporter;
 
@@ -67,6 +67,8 @@ Compress::PPMd - PPMd compression
 
 This package is a Perl wrapper around Dmitry Shkarin PPMd compression
 library.
+
+PPMd produces the best compression ratios for textual data.
 
 =head1 DESCRIPTION
 
@@ -193,7 +195,7 @@ MRMethod constants when used with C<:mrm>:
 
 This is a very early release, expect bugs.
 
-Only tested on Linux, support for Win32 planned.
+Only tested on Linux and NetBSD, support for Win32 planned.
 
 PPMd library doesn't work on 64bits architectures.
 
@@ -207,7 +209,7 @@ DON'T USE THIS LIBRARY ON NETWORK APPLICATIONS
 ... unless you can trust both client and server programs.
 
 
-Bug reports and patches are appreciated.
+Bug reports, patches and any feedback are appreciated.
 
 =head1 SEE ALSO
 
