@@ -1,4 +1,4 @@
-Compress/PPMd version 0.02
+Compress/PPMd version 0.03
 ==========================
 
 Perl interface to Dmitry Shkarin PPMd I1 compression library.
