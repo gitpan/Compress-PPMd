@@ -8,7 +8,8 @@ class PPMD_Encoder;
 class PPMD_Decoder;
 
 #pragma pack(1)
-struct SEE2_CONTEXT { // SEE-contexts for PPM-contexts with masked symbols
+class SEE2_CONTEXT { // SEE-contexts for PPM-contexts with masked symbols
+public:
     WORD Summ;
     BYTE Shift, Count;
     inline void init(UINT InitVal);
@@ -16,7 +17,8 @@ struct SEE2_CONTEXT { // SEE-contexts for PPM-contexts with masked symbols
     inline void update();
 } _PACK_ATTR;
 
-struct PPM_CONTEXT {                        // Notes:
+class PPM_CONTEXT {                         // Notes:
+public:
     BYTE NumStats, Flags;                   // 1. NumStats & NumMasked contain
     WORD SummFreq;                          //  number of symbols minus 1
     struct STATE {                          // 2. sizeof(WORD) > sizeof(BYTE)
@@ -52,7 +54,7 @@ public:
     void StopSubAllocator();
 
 private:
-    struct SEE2_CONTEXT SEE2Cont[24][32], DummySEE2Cont;
+    SEE2_CONTEXT SEE2Cont[24][32], DummySEE2Cont;
     int  InitEsc, RunLength, InitRL, MaxOrder;
     BYTE CharMask[256], PrevSuccess; //, PrintCount;
     WORD BinSumm[25][64]; // binary SEE-contexts

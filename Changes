@@ -1,5 +1,8 @@
 Revision history for Perl extension Compress::PPMd.
 
+0.08  15 May 2003
+	- now compiles on Windows with MSVC
+
 0.07  5 Apr 2003
 	- corrected header Buffer.hpp that broke compilation on
 	  NetBSD/Sparc

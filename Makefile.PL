@@ -1,4 +1,4 @@
-use 5.008;
+use 5.006;
 use ExtUtils::MakeMaker;
 
 WriteMakefile( 'NAME'	       => 'Compress::PPMd',
@@ -6,6 +6,6 @@ WriteMakefile( 'NAME'	       => 'Compress::PPMd',
 	       'ABSTRACT_FROM' => 'PPMd.pm',
 	       'PREREQ_PM'     => { 'Test::More' => 0,
 				    'ExtUtils::MakeMaker' => 6.05 },
-	       'CC'            => 'g++',
+	       'CC'            => ( $^O=~/Win32/ ? 'CL /TP' : 'g++' ),
 	       'OBJECT'        => '$(BASEEXT)$(OBJ_EXT) Model$(OBJ_EXT)',
 	       'AUTHOR'        => 'Salvador Fandiño <sfandino@yahoo.com>' );

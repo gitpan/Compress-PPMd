@@ -103,7 +103,7 @@ inline void Ari::EncoderInit() {
 inline void Ari::EncoderNormalize(PPMD_Out *stream) {
     while ((low ^ (low+range)) < TOP || range < BOT &&
 	   ((range= -low & (BOT-1)),1)) {
-        _PPMD_E_PUTC(low >> 24,stream);
+        _PPMD_E_PUTC((unsigned char)(low >> 24),stream);
         range <<= 8;
 	low <<= 8;
     }

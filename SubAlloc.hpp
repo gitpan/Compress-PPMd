@@ -8,6 +8,14 @@
 //enum { UNIT_SIZE=12, N1=4, N2=4, N3=4, N4=(128+3-1*N1-2*N2-3*N3)/4,
 //        N_INDEXES=N1+N2+N3+N4 };
 
+#if defined(link)
+#undef link
+#endif
+
+#if defined(unlink)
+#undef unlink
+#endif
+
 #pragma pack(1)
 struct BLK_NODE {
     DWORD Stamp;
