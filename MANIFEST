@@ -19,6 +19,7 @@ t/1_quijote.t
 t/0_use.t
 t/2_die.t
 t/3_rubbish.t
+t/4_pods.t
 typemap
 Types.hpp
 Wrapper.hpp

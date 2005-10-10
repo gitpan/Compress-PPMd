@@ -10,6 +10,7 @@
 
 
 MODULE = Compress::PPMd                         PACKAGE = Compress::PPMd::Encoder
+PROTOTYPES: DISABLE
 
 SV *
 PPMD_Encoder_Perl::encode(in)

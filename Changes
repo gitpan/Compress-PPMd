@@ -1,5 +1,10 @@
 Revision history for Perl extension Compress::PPMd.
 
+0.11  10 Oct 2005
+	- select the right linker (bug reported by Ed Wildgoose).
+	- add Test::Pod test.
+	- set prototype behaviour in XS file.
+
 0.10  28 Feb 2004
 	- corrected bug in test 3_rubbish.t
 

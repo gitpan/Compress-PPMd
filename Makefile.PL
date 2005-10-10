@@ -7,6 +7,6 @@ WriteMakefile( 'NAME'	       => 'Compress::PPMd',
 	       'PREREQ_PM'     => { 'Test::More' => 0,
 				    'ExtUtils::MakeMaker' => 6.05 },
 	       'CC'            => ( $^O=~/Win32/ ? 'CL /TP' : 'g++' ),
-	       'LD'            => ( $^O=~/Win32/ ? 'CL /TP' : 'g++' ),
+	       ($^O=~/Win32/ ? () : (LD => 'g++') ),
 	       'OBJECT'        => '$(BASEEXT)$(OBJ_EXT) Model$(OBJ_EXT)',
 	       'AUTHOR'        => 'Salvador Fandiño <sfandino@yahoo.com>' );
